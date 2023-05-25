@@ -1,0 +1,45 @@
+timestamp: 2023-05-25T14:29:56.126379
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) UNIQUE,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2023-05-25T14:29:56.127796
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tagpath" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE ON UPDATE CASCADE  
+);
+success!
+timestamp: 2023-05-25T14:57:24.965125
+CREATE TABLE "users"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE ON UPDATE CASCADE  ,
+    "username" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE ON UPDATE CASCADE  ,
+    "riot_api_key" CHAR(512),
+    "reviewer_id" CHAR(512),
+    "created_at" TIMESTAMP
+);
+success!
+timestamp: 2023-05-25T14:57:24.966731
+CREATE TABLE "reviews"(
+    "review_id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "game_id" CHAR(512),
+    "reviewer_id" CHAR(512),
+    "user_id" INTEGER REFERENCES "users" ("id") ON DELETE CASCADE ON UPDATE CASCADE  ,
+    "performance_rating" INTEGER,
+    "tilt_rating" INTEGER,
+    "personality_rating" INTEGER,
+    "body" TEXT,
+    "stars" INTEGER,
+    "created_at" TIMESTAMP
+);
+success!
