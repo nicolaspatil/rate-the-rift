@@ -1,0 +1,146 @@
+[[extend 'layout.html']]
+
+<div class="container">
+    <div class="container">
+        <div class="block has-text-centered">
+          <h1 class="title">Rate the Rift</h1>
+          <h2 class="subtitle">A League of Legends Player Rating App</h2>
+        </div>
+        <form method="POST" href="[[=search_user()]]">
+          <div class="field has-addons">
+            <div class="control"></div>
+            <div class="control is-expanded">
+              <input class="input" type="text" name="username" placeholder="username" />
+            </div>
+            <div class="control">
+              <button class="button is-info" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+  <div class="columns">
+    <div class="column is-one-third">
+      <div class="box has-text-centered">
+        <h3>Overall Rating:</h3>
+        <h3><b>[[=overall_rating]]</b></h3>
+      </div>
+      <label>Personality</label>
+      <progress
+        class="progress is-primary"
+        value="[[=personality_rating]]"
+        max="5"
+      >
+        [[=personality_rating]]
+      </progress>
+      <label>Performance</label>
+      <progress
+        class="progress is-warning"
+        value="[[=performance_rating]]"
+        max="5"
+      >
+        [[=performance_rating]]
+      </progress>
+      <label>Tilt</label>
+      <progress class="progress is-danger" value="[[=tilt_rating]]" max="5">
+        [[=tilt_rating]]
+      </progress>
+
+      <div class="box">
+        <h2 class="title is-4">Tags</h2>
+        <div class="tags">
+          [[for tag in tags:]]
+          <span class="tag is-info">[[=tag]]</span>
+          [[pass]]
+        </div>
+      </div>
+      <a class="button is-primary" href="[[=new_review_url]]">Add Review</a>
+    </div>
+    <div class="column">
+      <div class="box">
+        <h2 class="title is-4">Most Starred Reviews</h2>
+        <div class="columns">
+          [[for review in most_starred_reviews:]]
+          <div class="column">
+            <div class="box">
+              <progress
+                class="progress is-small is-primary"
+                value="[[=review.personality_rating]]"
+                max="5"
+              >
+                [[=review.personality_rating]]
+              </progress>
+              <progress
+                class="progress is-small is-warning"
+                value="[[=review.performance_rating]]"
+                max="5"
+              >
+                [[=review.performance_rating]]
+              </progress>
+              <progress
+                class="progress is-small is-danger"
+                value="[[=review.tilt_rating]]"
+                max="5"
+              >
+                [[=review.tilt_rating]]
+              </progress>
+              <div class="level">
+                <p>
+                <a class="icon-link" href="[[=review.add_star]]">
+                  <i class="fas fa-star"></i>
+                </a>
+                <b>[[=review.stars]]</b></p>
+                <p>[[=review.created_at]]</p>
+              </div>
+              <div class="level">
+                  <a class="button is-small" href="[[=review.url]]">View Review</a>
+              </div>
+            </div>
+          </div>
+          [[pass]]
+        </div>
+      </div>
+      <div class="box">
+        <h2 class="title is-4">Recent Reviews</h2>
+        [[for review in recent_reviews:]]
+        <div class="section">
+            <div class="box">
+              <progress
+                class="progress is-small is-primary"
+                value="[[=review.personality_rating]]"
+                max="5"
+              >
+                [[=review.personality_rating]]
+              </progress>
+              <progress
+                class="progress is-small is-warning"
+                value="[[=review.performance_rating]]"
+                max="5"
+              >
+                [[=review.performance_rating]]
+              </progress>
+              <progress
+                class="progress is-small is-danger"
+                value="[[=review.tilt_rating]]"
+                max="5"
+              >
+                [[=review.tilt_rating]]
+              </progress>
+              <div class="level">
+                <p>
+                <a class="icon-link" href="[[=review.add_star]]">
+                  <i class="fas fa-star"></i>
+                </a>
+                <b>[[=review.stars]]</b></p>
+                <p>[[=review.created_at]]</p>
+              </div>
+              <div class="level">
+                  <a class="button is-small" href="[[=review.url]]">View Review</a>
+              </div>
+            </div>
+          </div>
+        [[pass]]
+      </div>
+    </div>
+  </div>
+</div>

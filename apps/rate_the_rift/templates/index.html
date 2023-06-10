@@ -4,31 +4,22 @@
   <div class="hero-body">
     <div class="container">
       <div class="block has-text-centered">
-        <h1 class="title">
-          Rate the Rift
-        </h1>
-        <h2 class="subtitle">
-          A League of Legends Player Rating App
-        </h2>
+        <h1 class="title">Rate the Rift</h1>
+        <h2 class="subtitle">A League of Legends Player Rating App</h2>
       </div>
+      <form method="POST" href="[[=search_user()]]">
         <div class="field has-addons">
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>NA</option>
-                <option>EUW</option>
-              </select>
-            </div>
+          <div class="control"></div>
+          <div class="control is-expanded">
+            <input class="input" type="text" name="username" placeholder="username" />
           </div>
-            <div class="control is-expanded">
-              <input class="input" type="text" placeholder="username" />
-            </div>
-            <div class="control">
-              <button class="button is-info">Search</button>
-            </div>
+          <div class="control">
+            <button class="button is-info" type="submit">Search</button>
           </div>
         </div>
-      </div>
+      </form>
+      <div class="block has-text-centered">
+        <a href="/rate_the_rift/recent_games" class="button">View Recent Games</a>
     </div>
   </div>
 </div>

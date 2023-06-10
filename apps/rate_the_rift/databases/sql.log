@@ -43,3 +43,182 @@ CREATE TABLE "reviews"(
     "created_at" TIMESTAMP
 );
 success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2023-06-09T13:00:43.442020
+CREATE TABLE "test"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512)
+);
+success!
+success!
+timestamp: 2023-06-09T13:01:44.277200
+CREATE TABLE "user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512),
+    "riot_api_key" CHAR(512),
+    "reviewer_id" CHAR(512),
+    "created_at" TIMESTAMP
+);
+success!
+success!
+timestamp: 2023-06-09T13:02:30.253330
+CREATE TABLE "review"(
+    "review_id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "game_id" CHAR(512),
+    "reviewer_id" CHAR(512),
+    "user_id" CHAR(512),
+    "performance_rating" INTEGER,
+    "tilt_rating" INTEGER,
+    "personality_rating" INTEGER,
+    "body" TEXT,
+    "stars" INTEGER,
+    "created_at" TIMESTAMP
+);
+success!
+timestamp: 2023-06-09T13:03:09.849217
+ALTER TABLE "user" ADD "user_id" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2023-06-09T14:24:49.183891
+ALTER TABLE "review" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+timestamp: 2023-06-09T14:25:12.520896
+ALTER TABLE "review" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+timestamp: 2023-06-09T14:25:20.800177
+ALTER TABLE "review" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+timestamp: 2023-06-09T14:25:57.820753
+ALTER TABLE "review" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+timestamp: 2023-06-09T14:27:03.103767
+ALTER TABLE "review" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+timestamp: 2023-06-09T14:27:06.258952
+ALTER TABLE "review" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+success!
+success!
+timestamp: 2023-06-09T14:29:46.967422
+ALTER TABLE "reviews" ADD "id" INTEGER PRIMARY KEY AUTOINCREMENT;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2023-06-09T15:40:34.344053
+CREATE TABLE "game"(
+    "game_id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username1" CHAR(512),
+    "username1_stats" CHAR(512),
+    "username2" CHAR(512),
+    "username2_stats" CHAR(512),
+    "username3" CHAR(512),
+    "username3_stats" CHAR(512),
+    "username4" CHAR(512),
+    "username4_stats" CHAR(512),
+    "username5" CHAR(512),
+    "username5_stats" CHAR(512),
+    "username6" CHAR(512),
+    "username6_stats" CHAR(512),
+    "username7" CHAR(512),
+    "username7_stats" CHAR(512),
+    "username8" CHAR(512),
+    "username8_stats" CHAR(512),
+    "username9" CHAR(512),
+    "username9_stats" CHAR(512),
+    "username10" CHAR(512),
+    "username10_stats" CHAR(512)
+);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2023-06-09T19:50:59.819622
+ALTER TABLE "game" ADD "created_at" TIMESTAMP;
+success!
+success!
+success!
+success!
+success!
+success!
